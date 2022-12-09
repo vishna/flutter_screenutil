@@ -7,12 +7,14 @@ class ScreenUtilInit extends StatelessWidget {
     this.designSize = ScreenUtil.defaultSize,
     this.splitScreenMode = false,
     this.minTextAdapt = false,
+    this.disabled = false,
     Key? key,
   }) : super(key: key);
 
   final Widget Function() builder;
   final bool splitScreenMode;
   final bool minTextAdapt;
+  final bool disabled;
 
   /// The [Size] of the device in the design draft, in dp
   final Size designSize;
@@ -30,7 +32,8 @@ class ScreenUtilInit extends StatelessWidget {
             orientation: orientation,
             designSize: designSize,
             splitScreenMode: splitScreenMode,
-            minTextAdapt: minTextAdapt);
+            minTextAdapt: minTextAdapt,
+            disabled: disabled);
         return builder();
       }
       return Container();
